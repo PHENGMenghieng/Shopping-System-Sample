@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppe AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="area">
+        <ul class="circles">
+            <li>🛒</li>
+            <li>📱</li>
+            <li>📦</li>
+            <li>🥛</li>
+            <li>💸</li>
+            <li>📍</li>
+            <li>🛍️</li>
+            <li>🍎</li>
+            <li>👕</li>
+            <li>🥤</li>
+        </ul>
+    </div>
+
+    <nav class="navbar">...</nav>
+</body>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Shoppe</div>
+        <div class="nav-pills">
+            <a href="#image-search" class="pill">Search by Image</a>
+            <a href="#name-search" class="pill">Search by Name</a>
+        </div>
+    </nav>
+
+<section id="image-search" class="main-container">
+    <div class="search-card aqua-gradient">
+        <h2 class="title-font">Search by Picture</h2>
+        <p>Upload a photo of a product to find it in Cambodia</p>
+        
+        <div class="upload-zone" id="dropZone">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            <div class="upload-icon" onclick="document.getElementById('imageInput').click()">📸</div>
+            <p onclick="document.getElementById('imageInput').click()" style="cursor:pointer">
+                Tap to take a photo or upload
+            </p>
+        </div>
+        
+        <div id="imagePreviewContainer" style="display:none; margin-top:20px;">
+            <img id="imagePreview" src="" alt="Preview" style="max-width:200px; border-radius:15px;">
+            <br>
+            <button onclick="runImageAI()" class="pill-btn main-btn" style="margin-top:10px">Analyze Image</button>
+        </div>
+    </div>
+</section>
+
+    <section id="name-search" class="main-container">
+        <div class="search-card">
+            <h2 class="title-font">Search by Name</h2>
+            <div class="search-bar">
+                <input type="text" id="productInput" placeholder="What are you looking for? (e.g. Milk, iPhone)">
+                <button onclick="runAISearch()" class="pill-btn main-btn">Find Best Price</button>
+            </div>
+            
+            <div class="sort-wrapper">
+                <label for="sortOption">Sort by:</label>
+                <select id="sortOption" class="pill-select" onchange="runAISearch()">
+                    <option value="distance">Closeness (Cambodia)</option>
+                    <option value="price">Lowest Price</option>
+                    <option value="stock">High Availability</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="resultsDisplay" class="results-grid">
+            </div>
+    </section>
+
+    <script src="ai-engine.js"></script>
+</body>
+</html>

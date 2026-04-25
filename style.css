@@ -1,0 +1,226 @@
+:root {
+    --aqua-primary: #00ced1;
+    --aqua-soft: #e0fbfc;
+    --dark-blue: #1e3a47; /* Slightly darker for better font clarity */
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--aqua-soft);
+    color: var(--dark-blue);
+}
+
+/* Typography Consistency */
+.title-font, label, select, button, .pill {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 206, 209, 0.15);
+}
+
+.logo { font-size: 30px; font-weight: 800; color: var(--aqua-primary); }
+
+/* Navigation & Button Pills */
+.pill, .pill-btn, .pill-select {
+    border-radius: 50px; /* The Magic Number for Circle Shapes */
+    border: 2px solid var(--aqua-primary);
+    padding: 10px 25px;
+    transition: 0.3s;
+    background: var(--white);
+    outline: none;
+}
+
+.main-btn {
+    background: var(--aqua-primary);
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+/* Sorting Section - Pill Shape */
+.sort-wrapper {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+}
+
+.pill-select {
+    border: none; /* Removed border because wrapper has it */
+    padding: 5px 10px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--dark-blue);
+}
+
+/* Result Cards with rounded edges */
+.shop-item {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 30px; /* Match the search card */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.view-map-btn {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* Circular button */
+    padding: 8px 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* --- This part forces everything to the center --- */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Pulls the card and results to the center */
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.search-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Pulls the title, search bar, and sort into the middle */
+    width: 100%;
+    max-width: 700px;       /* Stops the card from stretching too wide */
+    text-align: center;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;         /* Adds space above and below the bar */
+    width: 100%;
+    justify-content: center; /* Centers the input and button inside the bar */
+}
+
+/* Optional: Make the input field a nice size */
+.search-bar input {
+    flex: 0 1 400px;        /* Limits input width to 400px */
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: 2px solid #eee;
+    outline: none;
+}
+
+/* Centers the results list as well */
+.results-grid {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 30px;
+}
+
+.upload-zone {
+    border: 3px dashed var(--aqua-primary);
+    padding: 40px;
+    border-radius: 30px;
+    background: var(--aqua-soft);
+    margin: 20px 0;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 400px;
+}
+
+.upload-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.upload-zone:hover {
+    background: #cff4f5;
+    transform: scale(1.02);
+}
+
+.aqua-gradient {
+    border-top: 8px solid var(--aqua-primary);
+}
+
+/* --- Floating Background Animation --- */
+
+.area {
+    background: var(--aqua-soft);  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    width: 100%;
+    height: 100vh;
+    position: fixed; /* Keeps it behind everything while you scroll */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Puts it in the very back */
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    font-size: 30px;
+    bottom: -150px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    border-radius: 50%;
+    padding: 10px;
+    opacity: 0.5;
+}
+
+/* Different positions and sizes for each icon */
+.circles li:nth-child(1) { left: 25%; font-size: 80px; animation-delay: 0s; }
+.circles li:nth-child(2) { left: 10%; font-size: 40px; animation-delay: 2s; animation-duration: 12s; }
+.circles li:nth-child(3) { left: 70%; font-size: 50px; animation-delay: 4s; }
+.circles li:nth-child(4) { left: 40%; font-size: 60px; animation-delay: 0s; animation-duration: 18s; }
+.circles li:nth-child(5) { left: 65%; font-size: 40px; animation-delay: 0s; }
+.circles li:nth-child(6) { left: 75%; font-size: 90px; animation-delay: 3s; }
+.circles li:nth-child(7) { left: 35%; font-size: 110px; animation-delay: 7s; }
+.circles li:nth-child(8) { left: 50%; font-size: 45px; animation-delay: 15s; animation-duration: 45s; }
+.circles li:nth-child(9) { left: 20%; font-size: 35px; animation-delay: 2s; animation-duration: 35s; }
+.circles li:nth-child(10) { left: 85%; font-size: 120px; animation-delay: 0s; animation-duration: 11s; }
+
+/* The Animation Movement */
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+        border-radius: 50%;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
