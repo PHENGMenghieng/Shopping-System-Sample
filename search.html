@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search - Shoppe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+    <!-- Visible Floating Background -->
+    <div class="background-animation">
+        <div class="floating-icon icon-1">🛒</div>
+        <div class="floating-icon icon-2">🛍️</div>
+        <div class="floating-icon icon-3">🥛</div>
+        <div class="floating-icon icon-4">🏷️</div>
+    </div>
+    
+    <!-- Rest of your code (Navbar, Main Card, etc.) -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Shoppe</a>
+        <span class="header-msg">Shoppe help you find items easier!</span>
+        <div class="nav-links">
+            <a href="search.html" style="text-decoration: underline;">Search</a>
+            <a href="image.html">Image</a>
+            <a href="describe.html">Describe</a>
+        </div>
+    </nav>
+
+    <div class="main-card">
+        <h2>Search by Name</h2>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <input type="text" id="nameInput" placeholder="Enter product name (e.g., milk)...">
+            
+            <select id="sort" class="btn-pill" style="background: white; color: black; width: 60%;">
+                <option>Sort by: Closeness</option>
+                <option>Sort by: Price</option>
+            </select>
+            
+            <button class="btn-pill" onclick="handleSearch()" style="width: 60%;">Find in Cambodia</button>
+        </div>
+        
+        <!-- Results will appear here -->
+        <div id="searchResultList"></div>
+    </div>
+
+    <div id="mapOverlay" class="map-overlay"></div>
+
+    <script src="app.js"></script>
+    <script>
+        function handleSearch() {
+            const query = document.getElementById('nameInput').value.toLowerCase();
+            const listContainer = document.getElementById('searchResultList');
+            
+            // Clear previous results
+            listContainer.innerHTML = "";
+
+            if(query.includes("milk")) {
+                showShopList('searchResultList'); 
+            } else if (query === "") {
+                alert("Please enter a product name.");
+            } else {
+                listContainer.innerHTML = "<p style='margin-top:20px;'>No items found for that name in this demo. Try 'milk'.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

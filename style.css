@@ -224,3 +224,485 @@ body {
         border-radius: 50%;
     }
 }
+
+:root {
+    --purple: #8A2BE2; /* Blue Violet */
+    --aqua: #00CED1;   /* Dark Turquoise */
+    --dark: #2d3436;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, var(--purple), var(--aqua));
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: var(--dark);
+}
+
+/* Background Shopping Vibes */
+body::before {
+    content: "🛍️ 🛒 💳 🏷️";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    font-size: 80px;
+    opacity: 0.03; /* Very subtle background pattern */
+    z-index: -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+/* Shared Navbar for Pages 2, 3, 4 */
+.navbar {
+    background: var(--gradient);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+.nav-logo {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Containers */
+.main-card {
+    background: var(--white);
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 5px solid var(--purple);
+}
+
+/* Big Buttons */
+.btn-gradient {
+    display: inline-block;
+    background: var(--gradient);
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+    width: 80%;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 206, 209, 0.4);
+}
+
+:root {
+    --purple: #8A2BE2; /* Modern BlueViolet */
+    --aqua: #00CED1;   /* Modern DarkTurquoise */
+    --dark: #2c3e50;
+    --white: #ffffff;
+    /* Redefine the purple/aqua mix for the header and pills */
+    --gradient: linear-gradient(135deg, var(--purple), var(--aqua));
+}
+
+/* 1. Unify the Font: All text now uses this clean sans-serif */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: var(--dark);
+    background-color: #f7f9fc;
+    overflow-x: hidden;
+}
+
+/* 2. Floating Background Animation (The Green Stuff) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    opacity: 0.04; /* Very subtle background texture */
+    /* Add shopping-related emojis as a pattern */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext y='25' font-size='20'%3E🛍️ 🛒 💳 🏷️%3C/text%3E%3C/svg%3E");
+    /* Apply a slow, hovering animation that stays in place */
+    animation: backgroundHover 20s ease-in-out infinite;
+}
+
+@keyframes backgroundHover {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-5px) rotate(1deg); } /* Gentle hover, doesn't go anywhere */
+}
+
+/* 3. The Pill-Shaped Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: var(--gradient);
+    
+    /* Apply to all pages: The header itself is now a pill */
+    border-radius: 50px; 
+    margin: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Required sentence in the center of the header */
+.header-msg {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+/* 4. The Unified Pill-Shaped Buttons */
+/* "Analyze My Request" is now pill-shaped and has the unified font */
+.btn-gradient {
+    display: inline-block;
+    background: var(--gradient);
+    color: var(--white);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px; /* Force the pill shape */
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit; /* Inherits unified font from body */
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Shared card style for all search tools */
+.main-card {
+    background: var(--white);
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+:root {
+    --purple: #852df2;
+    --aqua: #00ced1;
+    --gradient: linear-gradient(135deg, var(--purple), var(--aqua));
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    overflow-x: hidden;
+}
+
+/* Background Animation: Larger and clearer floating items */
+.background-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0.15; /* Increased visibility */
+}
+
+.floating-item {
+    font-size: 80px; /* Larger items */
+    animation: floatAround 10s ease-in-out infinite;
+}
+
+@keyframes floatAround {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(20px, -30px) rotate(10deg); }
+}
+
+/* PILL SHAPE EVERYTHING */
+input[type="text"], select, .btn-pill, .file-upload-wrapper {
+    border-radius: 50px !important; /* Force pill shape */
+    border: 2px solid var(--aqua);
+    padding: 12px 25px;
+    outline: none;
+    font-family: inherit;
+}
+
+.btn-pill {
+    background: var(--gradient);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Shop List Design */
+.shop-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Map Popup */
+.map-overlay {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; height: 80%;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+    border-radius: 20px;
+}
+
+/* Container for the floating background */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Stays behind everything */
+    overflow: hidden;
+    background: #f7f9fc; /* Clean base color */
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 100px; /* Big enough to be visible */
+    opacity: 0.2;     /* Stronger visibility (was 0.05) */
+    filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.2));
+    user-select: none;
+    pointer-events: none;
+    animation: drift 15s ease-in-out infinite;
+}
+
+/* Individual positions to keep it from looking "too many" */
+.icon-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.icon-2 { top: 60%; left: 80%; animation-delay: -3s; }
+.icon-3 { top: 80%; left: 20%; animation-delay: -7s; }
+.icon-4 { top: 10%; left: 75%; animation-delay: -11s; }
+
+@keyframes drift {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translate(30px, -40px) rotate(15deg) scale(1.1);
+    }
+}
+
+/* Define the animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply it to the main content of every page */
+.main-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Optional: Make the navbar slide down slightly */
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.navbar {
+    animation: slideDown 0.5s ease-out forwards;
+}
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: #f7f9fc;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0.15; /* Clear but subtle */
+    user-select: none;
+    pointer-events: none;
+    color: var(--purple); /* Optional: colors them to match your theme */
+}
+
+/* Fixed coordinates so they never move between pages */
+.icon-1 { top: 15%; left: 10%; }
+.icon-2 { top: 65%; left: 85%; }
+.icon-3 { top: 82%; left: 18%; }
+.icon-4 { top: 10%; left: 72%; }
+.floating-icon {
+    animation: drift 20s ease-in-out infinite;
+}
+
+/* --- Background Animation Logic --- */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: #f7f9fc;
+}
+
+/* MATCHED OPACITY ANIMATION: 
+   This ensures the item never goes above 0.15 visibility */
+@keyframes bgFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.15; /* Exactly matching your static item opacity */
+        transform: translateY(0);
+    }
+}
+
+/* DRIFT ANIMATION: 
+   Keeps the items moving gently in place */
+@keyframes drift {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(30px, -40px) rotate(10deg); }
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 100px;
+    color: #852df2; /* Your theme purple */
+    user-select: none;
+    pointer-events: none;
+    
+    /* Apply both: infinite movement and the matching fade-in */
+    animation: 
+        drift 15s ease-in-out infinite, 
+        bgFadeIn 1.5s ease-out forwards;
+}
+
+/* Precise Coordinates for Page Consistency */
+.icon-1 { top: 15%; left: 10%; animation-delay: 0s, 0s; }
+.icon-2 { top: 65%; left: 85%; animation-delay: 0.2s, -3s; }
+.icon-3 { top: 82%; left: 18%; animation-delay: 0.4s, -7s; }
+.icon-4 { top: 10%; left: 72%; animation-delay: 0.6s, -11s; }
+
+/* --- Main Card Fade-In (Full Visibility) --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0; /* Starts at 0 for the smooth fade-in */
+    user-select: none;
+    pointer-events: none;
+    color: var(--purple);
+    
+    /* ADD THIS LINE BACK TO MAKE THEM MOVE: */
+    animation: drift 15s ease-in-out infinite, bgFadeIn 1.5s ease-out forwards;
+}
+
+/* Ensure these keyframes are at the bottom of your CSS */
+@keyframes drift {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(30px, -40px) rotate(10deg); }
+}
+
+@keyframes bgFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 0.15; transform: translateY(0); }
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 100px;
+    user-select: none;
+    pointer-events: none;
+    color: var(--purple);
+    
+    /* 1. Set base opacity to 0.15 so it stays visible */
+    opacity: 0.15; 
+
+    /* 2. This line makes it move FOREVER */
+    /* 'drift' is the movement, '20s' is the speed, 'infinite' is the key! */
+    animation: drift 20s ease-in-out infinite;
+}
+
+/* 3. The movement path */
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -50px) rotate(5deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}

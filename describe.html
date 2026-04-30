@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Describe Item - Shoppe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+    <!-- Visible Floating Background -->
+    <div class="background-animation">
+        <div class="floating-icon icon-1">🛒</div>
+        <div class="floating-icon icon-2">🛍️</div>
+        <div class="floating-icon icon-3">🥛</div>
+        <div class="floating-icon icon-4">🏷️</div>
+    </div>
+    
+    <!-- Rest of your code (Navbar, Main Card, etc.) -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Shoppe</a>
+        <span class="header-msg">Shoppe help you find items easier!</span>
+        <div class="nav-links">
+            <a href="search.html">Search</a>
+            <a href="image.html">Image</a>
+            <a href="describe.html" style="text-decoration: underline;">Describe</a>
+        </div>
+    </nav>
+
+    <div class="main-card">
+        <h2 style="color: var(--purple);">Describe What You Need</h2>
+        <p>Type a full sentence and our AI will find the best match.</p>
+        
+        <textarea id="descriptionInput" placeholder="Example: I need fresh milk for my coffee delivered to BKK1..." 
+                  style="width: 90%; height: 120px; border-radius: 20px; padding: 15px; border: 2px solid var(--aqua); outline: none; font-family: inherit;"></textarea>
+        
+        <button onclick="analyzeText()" class="btn-gradient" style="margin-top: 20px;">Analyze My Request</button>
+
+        <!-- AI status and Shop List appear here -->
+        <div id="result" style="margin-top: 30px;"></div>
+    </div>
+
+    <div id="mapOverlay" class="map-overlay"></div>
+
+    <script src="app.js"></script>
+    <script>
+        function analyzeText() {
+            const text = document.getElementById('descriptionInput').value.toLowerCase();
+            const resultDiv = document.getElementById('result');
+            
+            // Reset result area
+            resultDiv.innerHTML = "";
+            
+            if (text.includes("milk")) {
+                resultDiv.innerHTML = "<div style='background: #e8f5e9; padding: 10px; border-radius: 15px; color: #2e7d32; margin-bottom: 20px;'>✅ <strong>AI Intent Recognized:</strong> Finding local shops in Phnom Penh selling Milk.</div>";
+                // Pulls list from app.js
+                showShopList('result'); 
+            } else {
+                resultDiv.innerHTML = "<p>❔ AI is checking... try describing 'milk' for the demo.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Image - Shoppe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+    <body>
+    <!-- Visible Floating Background -->
+    <div class="background-animation">
+        <div class="floating-icon icon-1">🛒</div>
+        <div class="floating-icon icon-2">🛍️</div>
+        <div class="floating-icon icon-3">🥛</div>
+        <div class="floating-icon icon-4">🏷️</div>
+    </div>
+    
+    <!-- Rest of your code (Navbar, Main Card, etc.) -->
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Shoppe</a>
+        <span class="header-msg">Shoppe help you find items easier!</span>
+        <div class="nav-links">
+            <a href="search.html">Search</a>
+            <a href="image.html" style="text-decoration: underline;">Image</a>
+            <a href="describe.html">Describe</a>
+        </div>
+    </nav>
+
+    <div class="main-card">
+        <h2 style="color: var(--purple);">AI Image Recognition</h2>
+        <p>Upload a photo of the product (Demo: Milk)</p>
+        <input type="file" id="imageInput" accept="image/*" style="margin: 20px 0;">
+        <br>
+        <!-- Updated: Pill-shaped button, Unified Font applied -->
+        <button onclick="analyzeImage()" class="btn-gradient">Analyze My Image</button>
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        function analyzeImage() {
+            // For the demo, always predict milk if a file is present.
+            if(document.getElementById('imageInput').files.length > 0) {
+                document.getElementById('result').innerText = "✅ Result: Milk (1L). Price: $2.50 at Aeon Mall Phnom Penh.";
+            } else {
+                alert("Please select an image first.");
+            }
+        }
+    </script>
+    <script src="app.js"></script>
+    <div id="mapOverlay" class="map-overlay"></div>
+</body>
+</body>
+</html>
